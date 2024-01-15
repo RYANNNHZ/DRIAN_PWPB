@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        #btn{
+            cursor: pointer;
+            border: none;
+            border-radius: 15px;
+            padding: 15px;
+        }
+
+        .biru{
+            color: white;
+            background-color: rgb(52, 205, 243);
+            animation: ease-in-out 2s;
+        }
+        
+        .abu{
+            animation: ease-in-out 2s;
+            color: white;
+            background-color: gray;
+        }
+    </style>
+</head>
+<body>
+    <button id="btn" onclick="subs()">subscribe</button>
+    <script>
+        let btn = document.getElementById('btn');
+        btn.classList.add('biru');
+
+
+        function subs(){
+            if(btn.classList.contains('biru')){
+                btn.classList.remove('biru');
+            btn.classList.add('abu');
+            btn.innerText = 'subbscribed';
+        }else if(btn.classList.contains('abu')){
+            btn.classList.remove('abu');
+            btn.classList.add('biru');
+            btn.innerText = 'subbscribe';
+        }
+         
+        }
+
+    </script>
+</body>
+</html>
