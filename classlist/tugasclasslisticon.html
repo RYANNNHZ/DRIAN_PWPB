@@ -17,12 +17,43 @@
         />
     </head>
 
-    <body>
+    <body id="body">
+
+
+      
+
+
+<div id="container" class="container d-flex justify-content-center align-items-center" style="width: 100vh; height: 100vh;">
+
+  
+<button type="button" id="" class="m-5 rounded-5 border-0" onclick="bjirlah()">
+  <i id="iconMode" class="bi bi-brightness-high-fill"></i>
+</button>
+
+
+  <div class="card" style="width: 18rem;">
+    <img src="https://i.pinimg.com/736x/39/ae/ec/39aeec24557678fffaf3e559aa217d8a.jpg" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">GUE BANGETTT</h5>
+      <p class="card-text">INI ADALAH GUE GA SALAH LAGI INI ADALAH GUE GUE BGT DINGIN BGT BJIRR</p>
+      <button type="button" class="btn btn-primary" id="liveToastBtn" onclick="changeicon()"><i id="icon" class="bi bi-heart m-2"></i>like rian</button>
+    </div>
+  </div>
+    
+</div>
+
+
 
         
 
-        <button type="button" class="btn btn-primary" id="liveToastBtn" onclick="changeicon()"><i id="icon" class="bi bi-heart"></i>like rian</button>
-
+        
+        
+        
+        
+        
+        
+        
+        
         <div class="toast-container position-fixed bottom-0 end-0 p-3">
           <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
             <div class="toast-header">
@@ -34,8 +65,21 @@
             </div>
           </div>
         </div>
-
         
+        
+        <div class="toast-container position-fixed bottom-0 end-0 p-3">
+          <div id="liveToast2" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="toast-header">
+            
+              <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
+            <div class="toast-body ms-4">
+              yahhh kenapa di unlike
+            </div>
+          </div>
+        </div>
+
+
 
         <script
             src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
@@ -50,33 +94,46 @@
         ></script>
 
         <script>
-
-const toastTrigger = document.getElementById('liveToastBtn')
 const toastLiveExample = document.getElementById('liveToast')
-
-if (toastTrigger) {
-  const toastBootstrap = bootstrap.Toast.getOrCreateInstance(toastLiveExample)
-  toastTrigger.addEventListener('click', () => {
-    toastBootstrap.show()
-  })
-}
+const toastLiveExample2 = document.getElementById('liveToast2')
                     
-
 
             var icon = document.getElementById('icon');
 
 
             function changeicon(){
                 if(icon.classList.contains('bi-heart')){
-                    icon.classList.remove('bi-heart');
-                    icon.classList.add('bi-heart-fill');
-                }else if(icon.classList.contains('bi-heart-fill')){
-                    icon.classList.remove('bi-heart-fill');
-                    icon.classList.add('bi-heart');
+                    icon.classList.replace('bi-heart','bi-heart-fill');
+                    // icon.classList.add('bi-heart-fill');
+                    const toastBootstrap = bootstrap.Toast.getOrCreateInstance(toastLiveExample)
+    toastBootstrap.show()
+    
+    
+    
+  }else if(icon.classList.contains('bi-heart-fill')){
+    icon.classList.replace('bi-heart-fill','bi-heart');
+    const toastBootstrap2 = bootstrap.Toast.getOrCreateInstance(toastLiveExample2)
+toastBootstrap2.show()
+  //                   const toastBootstrap2 = bootstrap.Toast.getOrCreateInstance(toastLiveExample2)
+  // toastTrigger.addEventListener('click', () => {
+  //   toastBootstrap2.show()
+  // })
+
+
                 }
 
             }
 
+
+            
+            function bjirlah(){
+              var icon = document.getElementById('iconMode');
+              if(icon.classList.contains("bi bi-brightness-high-fill")){
+                icon.classList.replace('bi bi-brightness-high-fill','bi bi-moon-stars-fill');
+              }else if(icon.classList.contains('bi bi-moon-stars-fill')){
+                icon.classList.replace('bi bi-moon-stars-fill','bi bi-brightness-high-fill');
+              }
+            }
 
         </script>
     </body>
