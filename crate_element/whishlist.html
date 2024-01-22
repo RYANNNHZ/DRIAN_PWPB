@@ -41,6 +41,7 @@
 
         <script>
             let container = document.getElementById('container');
+            
 
             for(var i = 0; i < 4; i++){
                 container.innerHTML += `
@@ -49,9 +50,27 @@
     <div class="card-body">
       <h5 class="card-title">GUE BANGETTT</h5>
       <p class="card-text">INI ADALAH GUE GA SALAH LAGI INI ADALAH GUE GUE BGT DINGIN BGT BJIRR</p>
-      <button type="button" class="btn btn-primary" id="liveToastBtn" onclick="changeicon()"><i id="icon" class="bi bi-heart m-2"></i>like rian</button>
+      <button type="button" class="btn btn-primary" id="liveToastBtn" onclick="love(${i})"><i id="icon" class="bi bi-heart m-2 icon_love"></i><p class='text'>like rian</p></button>
     </div>
   </div>`;
+      }
+      
+
+      function love(urutan){
+        let icon_love = document.getElementsByClassName("icon_love");
+        let btn = document.getElementsByClassName("btn");
+        let text = document.getElementsByClassName("text");
+
+        if(icon_love[urutan].classList.contains("bi-heart")){
+            icon_love[urutan].classList.replace("bi-heart","bi-heart-fill");
+            btn[urutan].classList.replace("btn-primary",'btn-success');
+            text[urutan].innerHTML = 'sudah di like';
+        }else{
+            
+            icon_love[urutan].classList.replace("bi-heart-fill","bi-heart");
+            btn[urutan].classList.replace("btn-success",'btn-primary');
+            text[urutan].innerHTML = 'like rian';
+        }
       }
 
         </script>
