@@ -42,18 +42,29 @@
         <script>
             let container = document.getElementById('container');
             
+            var image = [
+        "https://images.unsplash.com/photo-1698424954529-43aaa37b8ac1?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://images.unsplash.com/photo-1698322281610-0e4d97c90ec7?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://images.unsplash.com/photo-1696814543693-31fcf942ccb7?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://images.unsplash.com/photo-1698443357916-b2a72ceddd9b?q=80&w=1471&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      ];
 
-            for(var i = 0; i < 4; i++){
-                container.innerHTML += `
+
+      image.forEach((item,i) => {
+        
+        
+        container.innerHTML += `
   <div class="card" style="width: 18rem;">
-    <img src="https://i.pinimg.com/736x/39/ae/ec/39aeec24557678fffaf3e559aa217d8a.jpg" class="card-img-top" alt="...">
+    <img src="${item}" class="card-img-top" alt="...">
     <div class="card-body">
       <h5 class="card-title">GUE BANGETTT</h5>
       <p class="card-text">INI ADALAH GUE GA SALAH LAGI INI ADALAH GUE GUE BGT DINGIN BGT BJIRR</p>
       <button type="button" class="btn btn-primary" id="liveToastBtn" onclick="love(${i})"><i id="icon" class="bi bi-heart m-2 icon_love"></i><p class='text'>like rian</p></button>
     </div>
   </div>`;
-      }
+  i++
+      })
+
       
 
       function love(urutan){
