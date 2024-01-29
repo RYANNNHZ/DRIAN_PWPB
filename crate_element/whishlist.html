@@ -38,27 +38,44 @@
             integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
             crossorigin="anonymous"
         ></script>
-
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
         <script>
             let container = document.getElementById('container');
+
+
+            var keterangan = [
+                {
+                    judul :'gambar labu' ,
+                    deskripsi : 'labu fesh dari kebun pak mamat',
+                    gambar:"https://images.unsplash.com/photo-1698424954529-43aaa37b8ac1?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+                },
+                {
+                    judul :'anak laki laki' ,
+                    deskripsi : 'anak laki laki sedang pegang buah',
+                    gambar: "https://images.unsplash.com/photo-1698322281610-0e4d97c90ec7?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+                },
+                {
+                    judul :'crobong asap' ,
+                    deskripsi : 'mengahgant kan diri di dekat crobong asap',
+                    gambar:  "https://images.unsplash.com/photo-1696814543693-31fcf942ccb7?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+                },
+                {
+                    judul :'danau bjir' ,
+                    deskripsi : 'danau yang sangat indah cuy',
+                    gambar:        "https://images.unsplash.com/photo-1698443357916-b2a72ceddd9b?q=80&w=1471&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+                }
+            ]
             
-            var image = [
-        "https://images.unsplash.com/photo-1698424954529-43aaa37b8ac1?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-        "https://images.unsplash.com/photo-1698322281610-0e4d97c90ec7?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-        "https://images.unsplash.com/photo-1696814543693-31fcf942ccb7?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-        "https://images.unsplash.com/photo-1698443357916-b2a72ceddd9b?q=80&w=1471&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      ];
 
-
-      image.forEach((item,i) => {
+        keterangan.forEach((item,i) => {
         
         
         container.innerHTML += `
-  <div class="card" style="width: 18rem;">
-    <img src="${item}" class="card-img-top" alt="...">
+  <div class="card mx-1 my-5" style="width: 18rem;">
+    <img src="${item.gambar}" class="card-img-top" alt="...">
     <div class="card-body">
-      <h5 class="card-title">GUE BANGETTT</h5>
-      <p class="card-text">INI ADALAH GUE GA SALAH LAGI INI ADALAH GUE GUE BGT DINGIN BGT BJIRR</p>
+      <h5 class="card-title">${item.judul}</h5>
+      <p class="card-text">${item.deskripsi}</p>
       <button type="button" class="btn btn-primary" id="liveToastBtn" onclick="love(${i})"><i id="icon" class="bi bi-heart m-2 icon_love"></i><p class='text'>like rian</p></button>
     </div>
   </div>`;
