@@ -1,7 +1,10 @@
 async function getsurah() {
 
   try{
-
+  //   let cardsbox = document.querySelector('.solution_cards_box');
+  //   cardsbox.innerHTML = `<div class="spinner-border text-primary" role="status">
+  //   <span class="sr-only">Loading...</span>
+  // </div>`;
 
     const ambildata = await fetch("https://quran-api-id.vercel.app/surahs");
     const surahs = await ambildata.json();
