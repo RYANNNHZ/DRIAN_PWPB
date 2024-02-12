@@ -6,12 +6,12 @@ async function getsurah() {
   //   <span class="sr-only">Loading...</span>
   // </div>`;
 
+  let cardsbox = document.querySelector('.solution_cards_box');
     const ambildata = await fetch("https://quran-api-id.vercel.app/surahs");
     const surahs = await ambildata.json();
     console.log(surahs)
   
   surahs.forEach(element => {
-    let cardsbox = document.querySelector('.solution_cards_box');
 
     cardsbox.innerHTML += `<div class="solution_card py-6">
     <div class="hover_color_bubble"></div>
