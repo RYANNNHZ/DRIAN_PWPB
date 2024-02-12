@@ -1,7 +1,11 @@
 async function getsurah() {
+
+  try{
+
+
     const ambildata = await fetch("https://quran-api-id.vercel.app/surahs");
     const surahs = await ambildata.json();
-    console.log(surahs);
+    console.log(surahs)
   
   surahs.forEach(element => {
     let cardsbox = document.querySelector('.solution_cards_box');
@@ -71,5 +75,9 @@ async function getsurah() {
 
 
   });
+
+}catch(error){
+  alert('wah error');
+}
   }
           getsurah()
